@@ -1,0 +1,14 @@
+{
+  "extends": ["prettier"],
+  "plugins": ["svelte3", "prettier"],
+  "parser": "babel-eslint",
+  "rules": {
+    "svelte3/enabled": true,
+    "svelte3/lint-template": true,
+    "prettier/prettier": "error",
+    "max-len": ["error", 120]
+  },
+  "env": {
+    "browser": true
+  }
+}

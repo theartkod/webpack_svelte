@@ -1,0 +1,59 @@
+{
+  "name": "webpack_svelte",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack",
+    "build": "webpack --mode=production --progress",
+    "dev": "webpack-dev-server --watch",
+    "lint": "npx eslint src --ext .svelte",
+    "lintfix": "npx eslint src --ext .svelte --fix",
+    "size": "npm run build && size-limit"
+  },
+  "keywords": [],
+  "author": "Илья Бельский <theartkod@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.4.4",
+    "@babel/plugin-syntax-dynamic-import": "^7.2.0",
+    "@babel/preset-env": "^7.4.4",
+    "autoprefixer": "^9.5.1",
+    "babel-eslint": "^10.0.1",
+    "babel-loader": "^8.0.6",
+    "copy-webpack-plugin": "^5.0.3",
+    "css-loader": "^2.1.1",
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-config-prettier": "^4.3.0",
+    "eslint-plugin-import": "^2.17.2",
+    "eslint-plugin-prettier": "^3.1.0",
+    "eslint-plugin-svelte3": "^1.2.0",
+    "file-loader": "^3.0.1",
+    "html-webpack-plugin": "^3.2.0",
+    "mini-css-extract-plugin": "^0.6.0",
+    "postcss-loader": "^3.0.0",
+    "preload-webpack-plugin": "^3.0.0-beta.3",
+    "prettier": "1.17.1",
+    "size-limit": "^1.3.2",
+    "style-loader": "^0.23.1",
+    "svelte": "^3.4.1",
+    "svelte-loader": "^2.13.4",
+    "url-loader": "^1.1.2",
+    "webpack": "^4.31.0",
+    "webpack-cli": "^3.3.2",
+    "webpack-dev-server": "^3.4.1"
+  },
+  "dependencies": {
+    "core-js": "^3.1.0",
+    "page": "^1.11.4"
+  },
+  "size-limit": [
+    {
+      "limit": "300 KB",
+      "webpack": true,
+      "config": "./webpack.config.js",
+      "path": "./build/*.js"
+    }
+  ]
+}
