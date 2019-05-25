@@ -54,7 +54,6 @@
     {
       "limit": "300 KB",
       "webpack": true,
-      "config": "./webpack.config.js",
       "path": "./build/*.js"
     }
   ]
