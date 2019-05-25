@@ -24,7 +24,6 @@ Show app size: `npm run size`
 ### **Coming soon:**
 
 - [ ] Unit testing
-- [ ] TypeScript integration
-- [ ] Deep integration router 
+- [ ] Deep integration router
 
 
