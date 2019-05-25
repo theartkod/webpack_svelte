@@ -4,12 +4,14 @@
 
 ### **Usage:**
 
+--- 
 Build for production: `npm run build` \
 Run for development: `npm run dev` \
 Analyze bundle: `npm run analyze` \
 Show app size: `npm run size`
-
 ### **Features:**
+
+---
 
 🔄 live reloading\
 🔎 analyze mode for detecting large dependencies\
@@ -22,6 +24,8 @@ Show app size: `npm run size`
 🚗 support dynamic load pages with page.js router
 
 ### **Coming soon:**
+
+---
 
 - [ ] Unit testing
 - [ ] Deep integration router
