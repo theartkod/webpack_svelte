@@ -4,11 +4,11 @@
 
 ### **Features:**
 
-🔄 live reloading  
-🔎 analyze mode for detecting large dependencies
-🐣 understandable structure folders
-🌈 postcss for your styles
-🧹 ESlint and Prettier for formatting and lint your code
-🤓 images, fonts and static support
-🚀 blazing fast loading google fonts
+🔄 live reloading\
+🔎 analyze mode for detecting large dependencies\
+🐣 understandable structure folders\
+🌈 postcss for your styles\
+🧹 ESlint and Prettier for formatting and lint your code\
+🤓 images, fonts and static support\
+🚀 blazing fast loading google fonts\
 🚗 support dynamic load pages with page.js router
