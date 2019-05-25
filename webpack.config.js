@@ -5,7 +5,7 @@ const PreloadWebpackPlugin = require('preload-webpack-plugin')
 const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 const mode = process.env.NODE_ENV || 'development'
 const prod = mode === 'production'
 const pkg = require('./package.json')
@@ -20,7 +20,7 @@ module.exports = env => {
     resolve: {
       extensions: ['.mjs', '.js', '.svelte', '.json'],
       alias: {
-        '@': './src',
+        '@': path.resolve(__dirname),
       },
     },
     devServer: {
@@ -36,8 +36,8 @@ module.exports = env => {
     },
     output: {
       path: __dirname + '/build',
-      filename: '[name].[contenthash].js',
-      chunkFilename: '[name].[contenthash].js',
+      filename: '[name].[hash].js',
+      chunkFilename: '[name].[hash].js',
     },
     optimization: {
       splitChunks: {
@@ -81,9 +81,7 @@ module.exports = env => {
         },
         {
           test: /\.(png|svg|jpg|gif)$/,
-          use: [
-            'file-loader'
-          ]
+          use: ['file-loader'],
         },
         {
           test: /\.(gif|png|jpe?g|svg|woff|ttf)$/,
@@ -101,14 +99,22 @@ module.exports = env => {
     },
     plugins: [
       new MiniCssExtractPlugin({
-        filename: '[name].[contenthash].css',
+        filename: '[name].[hash].css',
       }),
-      new CopyPlugin([{from: './src/static', to: './'}]),
+      new CopyPlugin([
+        { from: './src/static', to: './' },
+        { from: './src/assets/images', to: './images' },
+        { from: './src/assets/fonts', to: './fonts' },
+      ]),
       new HtmlWebpackPlugin({
         title: pkg.name,
         template: './index.html',
       }),
-      new PreloadWebpackPlugin(),
+      // new PreloadWebpackPlugin(),
+      new BundleAnalyzerPlugin({
+        analyzerMode: 'static',
+        openAnalyzer: env && env.analyze ? true : false,
+      }),
     ],
     devtool: prod ? false : 'source-map',
   }

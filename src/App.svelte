@@ -23,9 +23,6 @@
   @import url("./assets/styles/main.pcss");
 </style>
 
-<nav>
-  <img src="./assets/images/svelte.png" alt="">
-  <a href="/about">about</a>
-</nav>
-
-<svelte:component this={route} />
+<div class="demo">
+  <svelte:component this={route} />
+</div>
