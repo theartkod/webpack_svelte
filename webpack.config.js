@@ -1,8 +1,7 @@
 const path = require('path')
-const fs = require('fs')
+const CleanWebpackPlugin = require('clean-webpack-plugin')
 const CopyPlugin = require('copy-webpack-plugin')
-const PreloadWebpackPlugin = require('preload-webpack-plugin')
-const webpack = require('webpack')
+// const PreloadWebpackPlugin = require('preload-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
@@ -98,6 +97,7 @@ module.exports = env => {
       ],
     },
     plugins: [
+      new CleanWebpackPlugin(),
       new MiniCssExtractPlugin({
         filename: '[name].[hash].css',
       }),
@@ -113,7 +113,7 @@ module.exports = env => {
       // new PreloadWebpackPlugin(),
       new BundleAnalyzerPlugin({
         analyzerMode: 'static',
-        openAnalyzer: env && env.analyze ? true : false,
+        openAnalyzer: !!(env && env.analyze),
       }),
     ],
     devtool: prod ? false : 'source-map',
