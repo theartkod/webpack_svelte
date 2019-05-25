@@ -24,7 +24,9 @@ Show app size: `npm run size`
 🤓 images, fonts and static support\
 🚀 blazing fast loading google fonts\
 🚗 support dynamic load pages with page.js router
+
 ---
+
 ### **Coming soon:**
 
 
